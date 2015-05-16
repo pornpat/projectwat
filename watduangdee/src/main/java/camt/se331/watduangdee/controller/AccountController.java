@@ -1,6 +1,8 @@
 package camt.se331.watduangdee.controller;
 
+import camt.se331.watduangdee.entity.Account;
 import camt.se331.watduangdee.entity.Product;
+import camt.se331.watduangdee.service.AccountService;
 import camt.se331.watduangdee.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -17,36 +19,36 @@ import java.util.List;
 public class AccountController {
 
     @Autowired
-    ProductService productService;
+    AccountService accountService;
 
-    @RequestMapping(value = "product",method = RequestMethod.GET)
-    public List<Product> list(){
-        return productService.getProducts();
+    @RequestMapping(value = "account",method = RequestMethod.GET)
+    public List<Account> list(){
+        return accountService.getAccounts();
     }
 
 
-    @RequestMapping(value = "getProduct",method = RequestMethod.GET)
-    public  List<Product> getListByName(@RequestParam("name")String name){
-        return productService.getProductsByName(name);
+    @RequestMapping(value = "getAccount",method = RequestMethod.GET)
+    public  List<Account> getListByName(@RequestParam("name")String name){
+        return accountService.getAccountsByName(name);
     }
-    @RequestMapping(value = "product",method = RequestMethod.POST)
+    @RequestMapping(value = "account",method = RequestMethod.POST)
     public @ResponseBody
-    Product add(@RequestBody Product product, BindingResult bindingResult){
-        return productService.addProduct(product);
+    Account add(@RequestBody Account account, BindingResult bindingResult){
+        return accountService.addAccount(account);
     }
 
-    @RequestMapping(value = "product/{id}",method = RequestMethod.GET)
-    public  Product getProduct(@PathVariable("id") Long id){
-        return productService.getProduct(id);
+    @RequestMapping(value = "account/{id}",method = RequestMethod.GET)
+    public  Account getAccount(@PathVariable("id") Long id){
+        return accountService.getAccount(id);
     }
 
-    @RequestMapping(value = "product/{id}",method = RequestMethod.PUT)
-    public  Product edit(@PathVariable("id") Long id,@RequestBody Product product, BindingResult bindingResult){
-        return productService.updateProduct(product);
+    @RequestMapping(value = "account/{id}",method = RequestMethod.PUT)
+    public  Account edit(@PathVariable("id") Long id,@RequestBody Account account, BindingResult bindingResult){
+        return accountService.updateAccount(account);
     }
 
-    @RequestMapping(value = "product/{id}",method = RequestMethod.DELETE)
-    public  Product edit(@PathVariable("id") Long id){
-        return productService.deleteProduct(id);
+    @RequestMapping(value = "account/{id}",method = RequestMethod.DELETE)
+    public  Account edit(@PathVariable("id") Long id){
+        return accountService.deleteAccount(id);
     }
 }

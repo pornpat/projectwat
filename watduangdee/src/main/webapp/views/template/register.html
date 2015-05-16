@@ -1,0 +1,59 @@
+<div class="row-fluid">
+    <div class="row" ng-show="addPerson">
+        <h1>Add Account</h1>
+    </div>
+    <div class="row" ng-show="editPerson">
+        <h1>Edit Account</h1>
+    </div>
+    <div class="col-md-4">
+        <form name="account" novalidate>
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="username">Username :</label>
+                <input ng-model="acc.username" class="form-control" id="username" name="username" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="account.username.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Username is Required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input ng-model="acc.password" class="form-control" id="password"
+                       name="password" type="password" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="account.password.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Password is Required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="repassword">Re-Password :</label>
+                <input ng-model="acc.repassword" class="form-control" id="repassword"
+                       name="repassword" type="password" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="account.repassword.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Re-Password is Required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input ng-model="acc.email" class="form-control" id="email"
+                       name="email" type="email" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="account.email.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Email is Required!
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-default" ng-click="addAccount()" ng-show="addPerson">Add</button>
+            <button type="submit" class="btn btn-default" ng-click="editAccount()" ng-show="editPerson">Edit</button>
+        </form>
+    </div>
+</div>

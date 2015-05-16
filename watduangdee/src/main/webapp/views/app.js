@@ -9,7 +9,9 @@ var labApp = angular.module('labApp', [
     'pascalprecht.translate',
     'shoppingCartControllers',
     'flow',
-    'securityControllers'
+    'securityControllers',
+    'accountMainController',
+    'accountServices'
 ])
 labApp.config(['$routeProvider',
   function($routeProvider) {
@@ -29,6 +31,18 @@ labApp.config(['$routeProvider',
       when('/shoppingCart/:id',{
           templateUrl: 'template/shoppingCart.html',
           controller: 'showShoppingCartController'
+      }).
+      when('/contact',{
+          templateUrl: 'template/contact.html',
+          controller: 'contactController'
+      }).
+      when('/gallery',{
+          templateUrl: 'template/gallery.html',
+          controller: 'galleryController'
+      }).
+      when('/register',{
+          templateUrl: 'template/register.html',
+          controller: 'addAccountController'
       }).
        otherwise({redirectTo: '/listProduct'});
 }]);

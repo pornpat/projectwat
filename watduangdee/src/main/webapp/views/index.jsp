@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
+    <title>Wat Duangdee</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -23,6 +23,8 @@
     <script src="js/productController.js"></script>
     <script src="js/productService.js"></script>
     <script src="js/SecurityController.js"></script>
+    <script src="js/accountController.js"></script>
+    <script src="js/accountService.js"></script>
 
 
     <!-- add i18n script -->
@@ -35,30 +37,21 @@
 
 </head>
 <body>
-<div class="">
-    <h1>CAMT
-        <small>Software Component Based Software Development</small>
-    </h1>
 
-</div>
-<div class="navbar navbar-default" ng-controller="languageController">
+<div class="" ng-controller="languageController">
     <div class="container-fluid">
             <div class="collapse navbar-collapse">
-                <div class="col-md-9 col-md-offset-2" ng-controller="loginController" >
+                <div class="col-sm-12 col-md-offset-5 ng-scope" ng-controller="loginController" >
                 <form class="form-inline" ng-hide="user">
                     <div class="form-group">
-                        <label for="username" class="col-sm-3 control-label">User Name:</label>
+                        <label for="username" class="col-sm-5 control-label">User Name:</label>
                         <div class="col-sm-3"><input id="username" ng-model="username" type="text" class="form-control"/> </div>
                     </div>
                     <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">Password :</label>
-                        <div class="col-sm-3"><input id="password" ng-model="password" type="text" class="form-control"/> </div>
+                        <label for="password" class="col-sm-5 control-label">Password :</label>
+                        <div class="col-sm-3"><input id="password" ng-model="password" type="password" class="form-control"/> </div>
                     </div>
-                    <div class="form-group">
-                    <div class="col-sm-3 col-sm-offset-3">
-                        <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
-                    </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-sm-offset-9 col-sm-9">
                         <div class="checkbox">
@@ -67,6 +60,12 @@
                             </label>
                             </div>
                             </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3 col-sm-offset-3">
+                            <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
+                            <a href="#/register">Register</a>
+                        </div>
                     </div>
                     </form>
                     <form class="form-inline" ng-show="user">
@@ -88,16 +87,28 @@
             </div>
     </div>
 </div>
+</div>
+
+
 <div class="container ng-hide" ng-show="initialized">
     <div class="alert alert-danger" ng-show="error">{{error}}</div>
 </div>
 
+<div class="">
+    <h1>CAMT
+        <small>Wat DuangDee</small>
+    </h1>
+
+</div>
+<div class="col-md-10">
+    <!-- Fixed left nav column -->
+    <div ng-include src="'template/leftnav.html'"></div>
+</div>
+
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-            <!-- Fixed left nav column -->
-            <div ng-include src="'template/leftnav.html'"></div>
-        </div>
+
         <div class="col-md-10">
             <!-- Breadcrumbs
            ================================================== -->

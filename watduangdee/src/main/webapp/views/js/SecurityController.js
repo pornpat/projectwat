@@ -24,6 +24,7 @@ $scope.login = function(){
            }
        })
 }
+
 $scope.logout = function(){
     $rootScope.user = null;
     $cookieStore.remove('authToken');

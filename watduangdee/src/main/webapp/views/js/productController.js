@@ -41,7 +41,7 @@ productMainController.controller('editProductController', ['$scope', '$http', '$
             productService.update({id:$scope.product.id},$scope.product,function(data){
                 flowFiles.opts.target = '/activityImage/add';
                 flowFiles.opts.testChunks = false;
-                flowFiles.opts.query ={activityid:$scope.product.id};
+                flowFiles.opts.query ={productid:$scope.product.id};
                 flowFiles.upload();
 
                 $rootScope.editSuccess = true;
@@ -49,16 +49,6 @@ productMainController.controller('editProductController', ['$scope', '$http', '$
                 $scope.$apply();
             });
         }
-
-        $scope.deleteImg = function (id,imgid) {
-            var answer = confirm("Do you want to delete the Image?");
-            if (answer) {
-                deleteImgService.delete({id:id,imgid:imgid},function(){
-                    $rootScope.deleteSuccess = true;
-                    $route.reload();
-                })
-            }
-        };
 
     }]);
 

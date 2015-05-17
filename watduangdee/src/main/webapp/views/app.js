@@ -43,7 +43,7 @@ labApp.config(['$routeProvider',
       }).
       when('/contact',{
           templateUrl: 'template/contact.html',
-          controller: 'contactController'
+          controller: ''
       }).
       when('/gallery',{
           templateUrl: 'template/gallery.html',

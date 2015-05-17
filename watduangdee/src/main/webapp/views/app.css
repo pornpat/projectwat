@@ -61,4 +61,22 @@ body {
 
 .headfont{
     font-size: 60px;
+    font-family: paaymaay;
+    color:#000000;
+}
+
+.changenav{
+    font-family: paaymaay;
+    font-size: 25px;
+    color:#000000;
+}
+
+.form-inline {
+    font-family: paaymaay;
+    font-size: 25px;
+}
+
+.contactinfo{
+    font-family: paaymaay;
+    font-size: 25px;
 }

@@ -35,4 +35,11 @@ public class DbQandaDao implements  QandaDao {
     public Qanda updateQanda(Qanda qanda) {
         return qandaRepository.save(qanda);
     }
+
+    @Override
+    public Qanda deleteQanda(Qanda qanda) {
+        qandaRepository.delete(qanda);
+        qanda.setId(null);
+        return qanda;
+    }
 }

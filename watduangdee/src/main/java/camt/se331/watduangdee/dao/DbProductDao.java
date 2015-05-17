@@ -25,7 +25,6 @@ public class DbProductDao implements ProductDao{
         return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name);
     }
 
-
     @Override
     public Product getProduct(Long id) {
         return productRepository.findOne(id);

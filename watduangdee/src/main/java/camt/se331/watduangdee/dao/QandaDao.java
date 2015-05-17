@@ -12,5 +12,5 @@ public interface QandaDao {
     Qanda getQanda (Long id);
     Qanda addQanda(Qanda qanda);
     Qanda updateQanda(Qanda qanda);
-
+    Qanda deleteQanda(Qanda qanda);
 }

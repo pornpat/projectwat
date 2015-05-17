@@ -14,7 +14,9 @@ var labApp = angular.module('labApp', [
     'accountMainController',
     'accountServices',
     'qandaMainController',
-    'qandaServices'
+    'qandaServices',
+    'galleryMainController',
+    'galleryServices'
 ])
 labApp.config(['$routeProvider',
   function($routeProvider) {
@@ -31,6 +33,10 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/productList.html',
           controller: 'listProductController'
       }).
+      when('/editQanda/:id',{
+          templateUrl: 'template/editQuestion.html',
+          controller: 'editQandaController'
+      }).
       when('/shoppingCart/:id',{
           templateUrl: 'template/shoppingCart.html',
           controller: 'showShoppingCartController'
@@ -41,7 +47,7 @@ labApp.config(['$routeProvider',
       }).
       when('/gallery',{
           templateUrl: 'template/gallery.html',
-          controller: 'galleryController'
+          controller: 'listGalleryController'
       }).
       when('/register',{
           templateUrl: 'template/register.html',

@@ -1,7 +1,6 @@
 package camt.se331.watduangdee.controller;
 
 import camt.se331.watduangdee.entity.Qanda;
-import camt.se331.watduangdee.service.ProductService;
 import camt.se331.watduangdee.service.QandaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -38,12 +37,16 @@ public class QandaController {
 
 
     }
-
-
         @RequestMapping(value = "qanda/{id}",method = RequestMethod.PUT)
         public  Qanda edit(@PathVariable("id") Long id,@RequestBody Qanda qanda, BindingResult bindingResult){
             return qandaService.updateQanda(qanda);
         }
 
+    @RequestMapping(value = "qanda/{id}",method = RequestMethod.DELETE)
+    public  Qanda edit(@PathVariable("id") Long id){
+        return qandaService.deleteQanda(id);
+    }
 }
+
+
 

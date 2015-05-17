@@ -27,6 +27,8 @@
     <script src="js/accountService.js"></script>
     <script src="js/qandaController.js"></script>
     <script src="js/qandaService.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/galleryService.js"></script>
 
 
     <!-- add i18n script -->

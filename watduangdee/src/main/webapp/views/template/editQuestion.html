@@ -1,0 +1,29 @@
+<div class="row-fluid">
+    <div class="row">
+        <h1>Answer</h1>
+    </div>
+    <div class="col-md-4">
+        <form name="qaform" novalidate flow-init>
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="question">Question :</label>
+                <input ng-model="qanda.question" class="form-control" id="question" name="question" disabled/>
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer :</label>
+                <input ng-model="qanda.answer" class="form-control" id="answer"
+                       placeholder="answer" name="answer" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="qaform.answer.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Answer is Required!
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-default" ng-click="editQanda()">Submit</button>
+
+        </form>
+    </div>
+</div>

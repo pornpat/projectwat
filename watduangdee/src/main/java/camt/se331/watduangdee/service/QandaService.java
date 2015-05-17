@@ -1,5 +1,6 @@
 package camt.se331.watduangdee.service;
 
+import camt.se331.watduangdee.entity.Product;
 import camt.se331.watduangdee.entity.Qanda;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface QandaService {
     Qanda getQanda (Long id);
     Qanda addQanda(Qanda qanda);
     Qanda updateQanda(Qanda qanda);
+    Qanda deleteQanda(Long id);
 }

@@ -5,6 +5,10 @@
     <title></title>
 </head>
 <body>
-
+    <div ng-repeat="gallery in galleries">
+        <div ng-repeat="image in gallery.images" class="text-center" class="thumbnail">
+            <img ng-src="data:{{image.contentType}};base64,{{image.content}}">
+        </div>
+    </div>
 </body>
 </html>

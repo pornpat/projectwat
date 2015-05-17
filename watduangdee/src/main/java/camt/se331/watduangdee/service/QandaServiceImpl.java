@@ -33,4 +33,10 @@ public class QandaServiceImpl implements  QandaService {
     public Qanda updateQanda(Qanda qanda) {
         return qandaDao.updateQanda(qanda);
     }
+
+    @Override
+    public Qanda deleteQanda(Long id) {
+        Qanda qanda = getQanda(id);
+        return qandaDao.deleteQanda(qanda);
+    }
 }

@@ -1,10 +1,7 @@
 package camt.se331.watduangdee.config;
 
 import camt.se331.watduangdee.entity.*;
-import camt.se331.watduangdee.repository.ProductRepository;
-import camt.se331.watduangdee.repository.QandaRepository;
-import camt.se331.watduangdee.repository.ShoppingCartRepository;
-import camt.se331.watduangdee.repository.UserRepository;
+import camt.se331.watduangdee.repository.*;
 import camt.se331.watduangdee.service.ImageUtil;
 
 import org.springframework.beans.factory.InitializingBean;
@@ -12,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -28,9 +26,17 @@ public class DatabaseInitializationBean implements InitializingBean {
     UserRepository userRepository;
     @Autowired
     QandaRepository qandaRepository;
+    @Autowired
+    GalleryRepository galleryRepository;
 
     @Override
     public void afterPropertiesSet() throws Exception {
+
+        Gallery[] initGallery = {
+                new Gallery(1l, ImageUtil.getImage("pic/gal1.JPG"))
+        };
+
+        galleryRepository.save(Arrays.asList(initGallery));
 
         Product[] initProduct =  {
                 new Product(1l,"asdasdas","asdasdsadasdasdasdasdasasdasd","2015-05-18", ImageUtil.getImage("pic/x.png")),

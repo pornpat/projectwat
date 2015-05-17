@@ -21,7 +21,6 @@ qandaMainController.controller('addQandaController', ['$scope', '$http', '$locat
             });
         };
 
-
     }]);
 
 qandaMainController.controller('listQandaController', ['$scope', '$http', '$rootScope','qandaService','$route',
@@ -56,7 +55,7 @@ qandaMainController.controller('listQandaController', ['$scope', '$http', '$root
         });
 
         $scope.deleteQanda = function (id) {
-            var answer = confirm("Do you want to delete the xx?");
+            var answer = confirm("Do you want to delete the question?");
             if (answer) {
                 qandaService.delete({id:id},function(){
                     $rootScope.deleteSuccess = true;
@@ -78,15 +77,15 @@ qandaMainController.controller('editQandaController', ['$scope', '$http', '$rout
         $scope.addPerson = false;
         $scope.editPerson = true;
         var id = $routeParams.id;
+
         $http.get("/qanda/" + id).success(function (data) {
             $scope.qanda = data;
         });
 
         $scope.editQanda = function () {
-            //$http.put("/product", $scope.product).then(function () {
             qandaService.update({id:$scope.qanda.id},$scope.qanda,function(){
                 $rootScope.editSuccess = true;
-                $location.path("listQanda");
+                $location.path("qanda");
             });
         }
     }]);

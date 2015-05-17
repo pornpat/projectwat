@@ -33,7 +33,10 @@ public class DatabaseInitializationBean implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
 
         Gallery[] initGallery = {
-                new Gallery(1l, ImageUtil.getImage("pic/gal1.JPG"))
+                new Gallery(1l, ImageUtil.getImage("pic/gal1.JPG")),
+                new Gallery(2l, ImageUtil.getImage("pic/gal1.JPG")),
+                new Gallery(3l, ImageUtil.getImage("pic/gal1.JPG")),
+                new Gallery(4l, ImageUtil.getImage("pic/gal1.JPG"))
         };
 
         galleryRepository.save(Arrays.asList(initGallery));

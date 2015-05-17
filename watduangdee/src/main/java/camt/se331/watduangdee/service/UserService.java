@@ -1,6 +1,5 @@
 package camt.se331.watduangdee.service;
 
-import camt.se331.watduangdee.entity.Account;
 import camt.se331.watduangdee.entity.User;
 
 import java.util.List;

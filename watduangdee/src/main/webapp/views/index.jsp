@@ -25,6 +25,8 @@
     <script src="js/SecurityController.js"></script>
     <script src="js/accountController.js"></script>
     <script src="js/accountService.js"></script>
+    <script src="js/qandaController.js"></script>
+    <script src="js/qandaService.js"></script>
 
 
     <!-- add i18n script -->
@@ -34,8 +36,6 @@
     <script src="js/languageControllers.js"></script>
     <script src="js/shoppingCartController.js"></script>
     <script src="js/shoppingCartService.js"></script>
-    <script src="js/qandaController.js"></script>
-    <script src="js/qandaService.js"></script>
 
 
 
@@ -80,16 +80,7 @@
                             <a href="#/register">Register</a>
                         </div>
 
-
-
                     </div>
-
-
-
-
-
-
-
 
                 </form>
                     <form class="form-inline" ng-show="user">

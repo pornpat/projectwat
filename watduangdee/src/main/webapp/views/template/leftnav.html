@@ -1,7 +1,9 @@
 
 <div class=" navbar navbar-inverse">
     <ul class="nav nav-pills">
-
+        <li ng-class="{true: 'active'}[menuActive('/listProduct')]" >
+            <a href="#/history">History</a>
+        </li>
     	<li ng-class="{true: 'active'}[menuActive('/addProduct')]" >
         	<a href="#/addProduct">Add Product</a>
     	</li>

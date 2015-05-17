@@ -51,17 +51,18 @@
             <img src="images/font1.png">
         </div>
         <div class="ng-scope col-md-4 " ng-controller="loginController" style="float: right; overflow: hidden;">
-            <form class="form-inline" ng-hide="user">
-                <div>
-                    <label for="username" class="col-sm-5 control-label">User Name:</label>
+            <form class="form-inline " ng-hide="user">
 
-                    <div class="col-sm-3"><input id="username" ng-model="username" type="text"
+                <div>
+                    <label for="username" class="col-sm-4  control-label">User Name:</label>
+
+                    <div class="  col-sm-5"><input id="username" ng-model="username" type="text" size="30"
                                                  class="form-control"/></div>
                 </div>
                 <div>
-                    <label for="password" class="col-sm-5 control-label">Password :</label>
+                    <label for="password" class="col-sm-4 control-label">Password :</label>
 
-                    <div class="col-sm-3"><input id="password" ng-model="password" type="password"
+                    <div class=" col-sm-3"><input id="password" ng-model="password" type="password" size="30"
                                                  class="form-control"/></div>
                 </div>
 
@@ -75,11 +76,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div style="margin-top: 20px;">
                     <div class="col-sm-offset-6 col-sm-7">
                         <div class="checkbox">
                             <label>
-                                <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
+                                <input type="submit" value="LOG IN" class="btn btn-primary" ng-click="login()"/>
                             </label>
                             <label>
                                 <a href="#/register">Register</a>
@@ -107,27 +109,18 @@
 
         <ul class="nav navbar-inverse nav-pills navbar-left col-md-offset-11   " >
             <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
-            <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
+            <li ng-class="{'active':currentLocale== 'th'}"><a href="" ng-click="changeLanguage('th')">TH</a></li>
         </ul>
 
                 </form>
-                    <form class="form-inline" ng-show="user">
-                        <div class="H6 col-sm-5 col-sm-offset-3 text-right">
-                            Welcome {{user.name}}
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-3">
-                                <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()"/>
-                             </div>
-                        </div>
-                    </form>
-                    </div>
-                <div class="collapse navbar-collapse" ng-controller="languageController"></div>
-                <ul class="nav navbar-nav navbar-right" ng-show="hasRole('foreign user')">
-                    <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
-                    <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
-                </ul>
-            </div>
+
+                    <%--</div>--%>
+                <%--<div class="collapse navbar-collapse" ng-controller="languageController"></div>--%>
+                <%--<ul class="nav navbar-nav navbar-right" ng-show="hasRole('foreign user')">--%>
+                    <%--<li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>--%>
+                    <%--<li ng-class="{'active':currentLocale== 'th'}"><a href="" ng-click="changeLanguage('th')">TH</a></li>--%>
+                <%--</ul>--%>
+            <%--</div>--%>
 
     </div>
 </div>

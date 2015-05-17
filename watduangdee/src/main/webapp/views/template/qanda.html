@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<!-- Table -->
+<table class="table table-hover">
+    <tr>
+     <th>Question</th>
+     <th>Answer</th>
+    </tr>
+    <tr ng-repeat="qanda in qandas">
+        <td>{{qanda.question}}</td>
+        <td>{{qanda.answer}}</td>
+    </tr>
+</table>
+
+
+
+<!-- Table -->
+
+
+<div class=col-md-5   >
+    <th>Question</th>
+
+    <form name="con" novalidate>
+        <div class="form-group">
+            <!-- Sidebar content-->
+            <label for="content">Content :</label>
+            <input ng-model="qanda.question" class="form-control" id="content" name="content" required/>
+
+            <div class="alert alert-danger" role="alert" ng-show="con.content.$error.required">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                Content is Required!
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-default" ng-click="addQanda()">Submit</button>
+    </form>
+</div>
+</body>
+</html>

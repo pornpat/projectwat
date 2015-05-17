@@ -1,11 +1,8 @@
 package camt.se331.watduangdee.config;
 
-import camt.se331.watduangdee.entity.Product;
-import camt.se331.watduangdee.entity.Role;
-import camt.se331.watduangdee.entity.User;
-import camt.se331.watduangdee.entity.SelectedProduct;
-import camt.se331.watduangdee.entity.ShoppingCart;
+import camt.se331.watduangdee.entity.*;
 import camt.se331.watduangdee.repository.ProductRepository;
+import camt.se331.watduangdee.repository.QandaRepository;
 import camt.se331.watduangdee.repository.ShoppingCartRepository;
 import camt.se331.watduangdee.repository.UserRepository;
 import camt.se331.watduangdee.service.ImageUtil;
@@ -29,6 +26,9 @@ public class DatabaseInitializationBean implements InitializingBean {
     ShoppingCartRepository shoppingCartRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    QandaRepository qandaRepository;
+
     @Override
     public void afterPropertiesSet() throws Exception {
         Product[] initProduct =  {
@@ -46,6 +46,13 @@ public class DatabaseInitializationBean implements InitializingBean {
 
         productRepository.save(Arrays.asList(initProduct));
         productRepository.save(new Product(1l,"Kindle","the good book reader",6900.00));
+
+        Qanda[] initQuada =  {
+                new Qanda(1l,"Kindle","the good book reader"),
+                new Qanda(2l,"Surface Pro","The unknow computer")
+        };
+
+        qandaRepository.save(Arrays.asList(initQuada));
 
         ShoppingCart shoppingCart = new ShoppingCart();
         List<SelectedProduct> selectedProducts = new ArrayList<>();
@@ -67,7 +74,6 @@ public class DatabaseInitializationBean implements InitializingBean {
 
         User admin = new User();
         admin.setUsername("admin");
-        admin.setName("admin");
         admin.setEmail("admin@yahoo.com");
         admin.setPassword("123456");
         Set<Role> roles = new HashSet<>();
@@ -75,7 +81,6 @@ public class DatabaseInitializationBean implements InitializingBean {
         admin.setRoles(roles);
 
         User user = new User();
-        user.setName("user");
         user.setUsername("user");
         user.setEmail("user@yahoo.com");
         user.setPassword("123456");
@@ -85,7 +90,6 @@ public class DatabaseInitializationBean implements InitializingBean {
 
 
         User foreignUser = new User();
-        foreignUser.setName("foreign user");
         foreignUser.setUsername("fUser");
         foreignUser.setEmail("foreignUser@yahoo.com");
         foreignUser.setPassword("123456");

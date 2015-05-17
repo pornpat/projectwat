@@ -2,7 +2,7 @@
 var accountService = angular.module('accountServices',['ngResource']);
 
 accountService.factory('accountService',function($resource){
-    return $resource('/account/:id', { id: '@_id' }, {
+    return $resource('/user/:id', { id: '@_id' }, {
         update: {
             method: 'PUT' // this method issues a PUT request
         }});

@@ -11,7 +11,9 @@ var labApp = angular.module('labApp', [
     'flow',
     'securityControllers',
     'accountMainController',
-    'accountServices'
+    'accountServices',
+    'qandaMainController',
+    'qandaServices'
 ])
 labApp.config(['$routeProvider',
   function($routeProvider) {
@@ -44,6 +46,11 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/register.html',
           controller: 'addAccountController'
       }).
+      when('/qanda',{
+          templateUrl: 'template/qanda.html',
+          controller: 'listQandaController'
+      }).
+
        otherwise({redirectTo: '/listProduct'});
 }]);
 

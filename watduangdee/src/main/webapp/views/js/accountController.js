@@ -4,12 +4,12 @@ var accountMainController = angular.module('accountMainController', ['accountSer
 
 accountMainController.controller('addAccountController', ['$scope', '$http', '$location', '$rootScope','accountService',
     function ($scope, $http, $location, $rootScope,accountService) {
-        $scope.account = {username:'',password:'',repassword:'',email:''};
+        $scope.user = {};
         $scope.addPerson = true;
         $scope.editPerson = false;
         $scope.addAccount = function () {
 
-            accountService.save($scope.account,function(data){
+            accountService.save($scope.user,function(data){
                 // after adding the object, add a new picture
                 // get the product id which the image will be addded
                 var accountid = data.id;

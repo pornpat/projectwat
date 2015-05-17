@@ -34,9 +34,14 @@
     <script src="js/languageControllers.js"></script>
     <script src="js/shoppingCartController.js"></script>
     <script src="js/shoppingCartService.js"></script>
+    <script src="js/qandaController.js"></script>
+    <script src="js/qandaService.js"></script>
+
+
 
 </head>
 <body>
+
 
 <div class="" ng-controller="languageController">
     <div class="container-fluid">
@@ -90,11 +95,12 @@
 </div>
 
 
-<div class="container ng-hide" ng-show="initialized">
+
+<div class="container ng-hide" ng-show="initialized" >
     <div class="alert alert-danger" ng-show="error">{{error}}</div>
 </div>
 
-<div class="">
+<div class="page-header" >
     <h1>CAMT
         <small>Wat DuangDee</small>
     </h1>

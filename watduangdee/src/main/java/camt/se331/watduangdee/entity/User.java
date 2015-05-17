@@ -18,10 +18,8 @@ public class User {
     @GeneratedValue
     private Long id;
     private String username;
-    private String name;
     private String email;
     private String password;
-    private Date dob;
     @ManyToMany(fetch= FetchType.EAGER)
     @Cascade(CascadeType.ALL)
     private Set<Role> roles = new HashSet<>();
@@ -45,14 +43,6 @@ public class User {
         this.username = username;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -69,13 +59,6 @@ public class User {
         this.password = password;
     }
 
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
 
     public Set<Role> getRoles() {
         return roles;

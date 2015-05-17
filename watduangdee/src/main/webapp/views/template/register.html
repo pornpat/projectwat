@@ -6,13 +6,13 @@
         <h1>Edit Account</h1>
     </div>
     <div class="col-md-4">
-        <form name="account" novalidate>
+        <form name="acc" novalidate>
             <div class="form-group">
                 <!-- Sidebar content-->
                 <label for="username">Username :</label>
-                <input ng-model="acc.username" class="form-control" id="username" name="username" required/>
+                <input ng-model="user.username" class="form-control" id="username" name="username" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="account.username.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="acc.username.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Username is Required!
@@ -20,10 +20,10 @@
             </div>
             <div class="form-group">
                 <label for="password">Password :</label>
-                <input ng-model="acc.password" class="form-control" id="password"
+                <input ng-model="user.password" class="form-control" id="password"
                        name="password" type="password" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="account.password.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="acc.password.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Password is Required!
@@ -31,10 +31,10 @@
             </div>
             <div class="form-group">
                 <label for="repassword">Re-Password :</label>
-                <input ng-model="acc.repassword" class="form-control" id="repassword"
+                <input ng-model="repassword" class="form-control" id="repassword"
                        name="repassword" type="password" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="account.repassword.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="acc.repassword.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Re-Password is Required!
@@ -42,10 +42,10 @@
             </div>
             <div class="form-group">
                 <label for="email">Email :</label>
-                <input ng-model="acc.email" class="form-control" id="email"
+                <input ng-model="user.email" class="form-control" id="email"
                        name="email" type="email" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="account.email.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="acc.email.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Email is Required!

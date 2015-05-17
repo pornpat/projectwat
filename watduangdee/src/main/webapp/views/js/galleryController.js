@@ -7,6 +7,7 @@ galleryMainController.controller('addGalleryController', ['$scope', '$http', '$l
         $scope.gallery = {};
         $scope.addPerson = true;
         $scope.editPerson = false;
+
         $scope.addGallery = function (flowFiles) {
 
             galleryService.save($scope.gallery,function(data){

@@ -49,6 +49,10 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/gallery.html',
           controller: 'listGalleryController'
       }).
+      when('/addGallery',{
+          templateUrl: 'template/addGallery.html',
+          controller: 'addGalleryController'
+      }).
       when('/register',{
           templateUrl: 'template/register.html',
           controller: 'addAccountController'

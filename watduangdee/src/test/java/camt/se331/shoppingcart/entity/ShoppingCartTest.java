@@ -36,9 +36,9 @@ public class ShoppingCartTest {
     }
 
     public Object[] parameterForTestGetTotalProductPrice(){
-        Product p1 =  new Product(1l,"iphone 6","The worst iphone ever",25000.00);
-        Product p2 = new Product(2l, "Note II","The old",6500.00);
-        Product p3 = new Product (3l, "Chair", "Older chair",250.00 );
+        Product p1 =  new Product(1l,"title1","asdsadasd","17/5/58");
+        Product p2 = new Product(2l, "title2","asdsadasd","17/5/58");
+        Product p3 = new Product (3l, "title3", "asdsadasd","17/5/58");
         return $(
                 $(Arrays.asList(new SelectedProduct(p1,0),
                         new SelectedProduct(p2,0),

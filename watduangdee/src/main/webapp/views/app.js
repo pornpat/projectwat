@@ -4,6 +4,7 @@
 var labApp = angular.module('labApp', [
     'ngRoute',
     'productMainController',
+    'productServices',
     'languageControllers',
     'languageServices',
     'pascalprecht.translate',
@@ -56,6 +57,10 @@ labApp.config(['$routeProvider',
       }).
       when('/history',{
           templateUrl: 'template/history.html',
+          controller: 'listProductController'
+      }).
+      when('/activity',{
+          templateUrl: 'template/activity.html',
           controller: 'listProductController'
       }).
        otherwise({redirectTo: '/introduce'});

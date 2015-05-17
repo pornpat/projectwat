@@ -110,6 +110,25 @@
             <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
         </ul>
 
+                </form>
+                    <form class="form-inline" ng-show="user">
+                        <div class="H6 col-sm-5 col-sm-offset-3 text-right">
+                            Welcome {{user.name}}
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()"/>
+                             </div>
+                        </div>
+                    </form>
+                    </div>
+                <div class="collapse navbar-collapse" ng-controller="languageController"></div>
+                <ul class="nav navbar-nav navbar-right" ng-show="hasRole('foreign user')">
+                    <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
+                    <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
+                </ul>
+            </div>
+
     </div>
 </div>
 

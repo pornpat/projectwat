@@ -31,21 +31,13 @@ public class DatabaseInitializationBean implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+
         Product[] initProduct =  {
-                new Product(1l,"Kindle","the good book reader",6900.00, ImageUtil.getImage("pic/x.png")),
-                new Product(2l,"Surface Pro","The unknow computer",34000.00,ImageUtil.getImage("pic/x.png")),
-                new Product(3l,"Mac pro"," Mac book interim",44000.00,ImageUtil.getImage("pic/x.png")),
-                new Product(4l,"Candle","use for lightenup the world",10.00,ImageUtil.getImage("pic/x.png")),
-                new Product(5l,"Bin","User for what ?",200.00,ImageUtil.getImage("pic/x.png")),
-                new Product(6l,"Telephone", "Call the others",150.00,ImageUtil.getImage("pic/x.png")),
-                new Product(7l,"iPhone","What is it?",26000.00,ImageUtil.getImage("pic/x.png")),
-                new Product(8l,"Galaxy Note 4","Who still use this ?",24000.00,ImageUtil.getImage("pic/x.png")),
-                new Product(9l,"AngularJS","we hate it",2000.00,ImageUtil.getImage("pic/x.png")),
-                new Product(10l,"Mazda 3","Very handsome guy use this",300000.00,ImageUtil.getImage("pic/x.png"))
+                new Product(1l,"asdasdas","asdasdsadasdasdasdasdasasdasd","2015-05-18", ImageUtil.getImage("pic/x.png")),
+                new Product(2l,"asdsad","asdfsdfsfsadfsdfsadfsdf","2015-05-25",ImageUtil.getImage("pic/x.png"))
         };
 
         productRepository.save(Arrays.asList(initProduct));
-        productRepository.save(new Product(1l,"Kindle","the good book reader",6900.00));
 
         Qanda[] initQuada =  {
                 new Qanda(1l,"Kindle","the good book reader"),
@@ -53,20 +45,6 @@ public class DatabaseInitializationBean implements InitializingBean {
         };
 
         qandaRepository.save(Arrays.asList(initQuada));
-
-        ShoppingCart shoppingCart = new ShoppingCart();
-        List<SelectedProduct> selectedProducts = new ArrayList<>();
-        SelectedProduct[] initSelectedProduct = {
-                new SelectedProduct(initProduct[2], 5),
-                new SelectedProduct(initProduct[4], 2),
-                new SelectedProduct(initProduct[1], 1),
-        };
-        selectedProducts.addAll(Arrays.asList(initSelectedProduct));
-        Calendar calendar = new GregorianCalendar(2015,4,7);
-        shoppingCart.setSelectedProducts(selectedProducts);
-        shoppingCart.setPurchaseDate(calendar.getTime());
-        shoppingCart.setId(1L);
-        shoppingCartRepository.save(shoppingCart);
 
         Role adminRole = new Role("admin");
         Role userRole  = new Role("user");

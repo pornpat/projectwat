@@ -16,7 +16,7 @@ accountMainController.controller('addAccountController', ['$scope', '$http', '$l
                 // set location
 
                 $rootScope.addSuccess = true;
-                $location.path("listProduct");
+                $location.path("introduce");
                 $scope.$apply();
             });
         };
@@ -37,7 +37,7 @@ accountMainController.controller('editAccountController', ['$scope', '$http', '$
             //$http.put("/product", $scope.product).then(function () {
             accountService.update({id:$scope.account.id},$scope.account,function(){
                 $rootScope.editSuccess = true;
-                $location.path("listProduct");
+                $location.path("introduce");
             });
         }
     }]);

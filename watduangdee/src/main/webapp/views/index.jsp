@@ -38,85 +38,88 @@
     <script src="js/shoppingCartService.js"></script>
 
 
-
 </head>
 <body>
 <br>
+
+
 <div class="boxContent" ng-controller="languageController">
-    <div class="container-fluid">
-            <div class="collapse navbar-collapse">
-                <div class="col-sm-12 col-md-offset-9 ng-scope" ng-controller="loginController" >
-                <form class="form-inline" ng-hide="user">
-                    <div class="form-group">
-                        <label for="username" class="col-sm-5 control-label">User Name:</label>
-                        <div class="col-sm-3"><input id="username" ng-model="username" type="text" class="form-control"/> </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-5 control-label">Password :</label>
-                        <div class="col-sm-3"><input id="password" ng-model="password" type="password" class="form-control"/> </div>
-                    </div>
+
+    <div class="form-group col-lg-12">
+        <div class="col-sm-5">
+            <img src="images/waticon.png">
+            <img src="images/font1.png">
+        </div>
+        <div class="ng-scope col-md-4 " ng-controller="loginController" style="float: right; overflow: hidden;">
+            <form class="form-inline" ng-hide="user">
+                <div>
+                    <label for="username" class="col-sm-5 control-label">User Name:</label>
+
+                    <div class="col-sm-3"><input id="username" ng-model="username" type="text"
+                                                 class="form-control"/></div>
+                </div>
+                <div>
+                    <label for="password" class="col-sm-5 control-label">Password :</label>
+
+                    <div class="col-sm-3"><input id="password" ng-model="password" type="password"
+                                                 class="form-control"/></div>
+                </div>
 
 
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-9 col-sm-7">
+                <div style="margin-top: 20px;">
+                    <div class="col-sm-offset-6 col-sm-7">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-model="rememberMe"> Remember me
                             </label>
-                            </div>
-                            </div>
+                        </div>
                     </div>
-
-
-                    <div class="form-group">
-                        <div class="col-sm-3 col-sm-offset-2">
-                            <br>
-                            <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
-
+                </div>
+                <div style="margin-top: 20px;">
+                    <div class="col-sm-offset-6 col-sm-7">
+                        <div class="checkbox">
+                            <label>
+                                <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
+                            </label>
+                            <label>
+                                <a href="#/register">Register</a>
+                            </label>
                         </div>
-
-                        <div class="form-group">
-                            <a href="#/register">Register</a>
-                        </div>
-
                     </div>
-
-                </form>
-                    <form class="form-inline" ng-show="user">
-                        <div class="H6 col-sm-5 col-sm-offset-3 text-right">
-                            Hello   !!! {{user.name}}
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-3">
-                                <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()"/>
-                             </div>
-                        </div>
-                    </form>
+                </div>
+            </form>
+            <form ng-show="user">
+                <div class="H6 col-sm-5 col-sm-offset-3 text-right">
+                    Hello !!! {{user.name}}
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()"/>
                     </div>
-                <div class="collapse navbar-collapse" ng-controller="languageController"></div>
-                <ul class="nav navbar-nav navbar-right" ng-show="hasRole('foreign user')">
-                    <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
-                    <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
-                </ul>
-            </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+    <div class="collapse navbar-collapse" ng-controller="languageController">
+
+        <ul class="nav navbar-inverse nav-pills navbar-left col-md-offset-11   " >
+            <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
+            <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
+        </ul>
+
     </div>
 </div>
-</div>
 
 
-
-<div class="container ng-hide" ng-show="initialized" >
+<div class="container ng-hide" ng-show="initialized">
     <div class="alert alert-danger" ng-show="error">{{error}}</div>
 </div>
 
-<div class="page-header" >
-    <h1>CAMT
-        <small>Wat DuangDee</small>
-    </h1>
 
-</div>
-<div class="col-md-10">
+<div class="col-md-12">
     <!-- Fixed left nav column -->
     <div ng-include src="'template/leftnav.html'"></div>
 </div>

@@ -29,31 +29,41 @@
                     Password is Required!
                 </div>
             </div>
-            <div class="form-group">
-                <label for="repassword">Re-Password :</label>
-                <input ng-model="repassword" class="form-control" id="repassword"
-                       name="repassword" type="password" required/>
+            <!--<div class="form-group">-->
+                <!--<label for="repassword">Re-Password :</label>-->
+                <!--<input ng-model="repassword" class="form-control" id="repassword"-->
+                       <!--name="repassword" type="password" required/>-->
 
-                <div class="alert alert-danger" role="alert" ng-show="acc.repassword.$error.required">
-                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only">Error:</span>
-                    Re-Password is Required!
-                </div>
-            </div>
+                <!--<div class="alert alert-danger" role="alert" ng-show="acc.repassword.$error.required">-->
+                    <!--<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
+                    <!--<span class="sr-only">Error:</span>-->
+                    <!--Re-Password is Required!-->
+                <!--</div>-->
+            <!--</div>-->
             <div class="form-group">
                 <label for="email">Email :</label>
-                <input ng-model="user.email" class="form-control" id="email"
-                       name="email" type="email" required/>
+                <input type="email" ng-model="user.email" class="form-control" id="email"
+                       name="email" required/>
 
                 <div class="alert alert-danger" role="alert" ng-show="acc.email.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Email is Required!
                 </div>
+                <div class="alert alert-danger" role="alert" ng-show="acc.email.$error.email">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Email not in format!
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-default" ng-click="addAccount()" ng-show="addPerson">Add</button>
-            <button type="submit" class="btn btn-default" ng-click="editAccount()" ng-show="editPerson">Edit</button>
+            <button type="submit" class="btn btn-default" ng-click="addAccount()" ng-show="addPerson" ng-disabled="acc.email.$error.required || acc.email.$error.email || acc.username.$error.required || acc.password.$error.required">Add</button>
+            <button type="submit" class="btn btn-default" ng-click="editAccount()" ng-show="editPerson" ng-disabled="acc.email.$error.required || acc.email.$error.email || acc.username.$error.required || acc.password.$error.required">Edit</button>
+
+
         </form>
+
+        <br><br>
+
     </div>
 </div>

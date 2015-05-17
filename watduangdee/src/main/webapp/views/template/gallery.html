@@ -5,14 +5,15 @@
     <title></title>
 </head>
 <body>
+
+
+<button class="btn btn-default" ng-show="hasRole('admin')"><a href="#addGallery">Add</a></button>
+
     <div  ng-repeat="gallery in galleries" >
 
         <div    ng-repeat="image in gallery.images" class="text-center" class="thumbnail" >
            <img ng-src="data:{{image.contentType}};base64,{{image.content}}" style="width:550px;  height:400px;   display:inline; margin:10px; white-space: nowrap;" >
         </div>
-
-
-
 
     </div>
 </body>

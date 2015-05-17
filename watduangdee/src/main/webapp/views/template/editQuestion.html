@@ -22,7 +22,7 @@
 
             </div>
 
-            <button type="submit" class="btn btn-default" ng-click="editQanda()">Submit</button>
+            <button type="submit" class="btn btn-default" ng-click="editQanda()" ng-disabled="qaform.answer.$error.required">Submit</button>
 
         </form>
     </div>

@@ -79,5 +79,10 @@ body {
 .contactinfo{
     font-family: paaymaay;
     font-size: 25px;
+    color:#000000;
 }
 
+.table-hover{
+    font-family: paaymaay;
+    font-size: 30px;
+}

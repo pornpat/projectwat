@@ -16,9 +16,11 @@
 
 <button class="btn btn-default" ng-show="hasRole('admin')"><a href="#addProduct">Add</a></button>
 
-    <table class="table table-hover">
+    <table  class="table table-hover" >
+
         <tr>
-            <th translate>listProduct.name </th>
+
+          <th translate>listProduct.name </th>
             <th translate>listProduct.description</th>
             <th translate>listProduct.date</th>
             <th class="text-center" translate>listProduct.picture</th>
@@ -26,18 +28,21 @@
             <th translate ng-show="hasRole('admin')">listProduct.delete</th>
 
         </tr>
+
+
         <tr ng-repeat="product in products">
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
             <td>{{product.date}}</td>
             <td >
                 <div ng-repeat="image in product.images" class="text-center" class="thumbnail">
-                    <img ng-src="data:{{image.contentType}};base64,{{image.content}}">
+                    <img ng-src="data:{{image.contentType}};base64,{{image.content}}" style="width:200px;  height:200px;">
                 </div>
             </td>
             <td class="text-center" ng-show="hasRole('admin')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
             <td class="text-center" ng-show="hasRole('admin')"><a ng-href="#/listProduct"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="deleteProduct(product.id)"></span></a></td>
         </tr>
+
     </table>
 
 </div>

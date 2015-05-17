@@ -50,8 +50,15 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/qanda.html',
           controller: 'listQandaController'
       }).
-
-       otherwise({redirectTo: '/listProduct'});
+      when('/introduce',{
+          templateUrl: 'template/introduce.html',
+          controller: 'listProductController'
+      }).
+      when('/history',{
+          templateUrl: 'template/history.html',
+          controller: 'listProductController'
+      }).
+       otherwise({redirectTo: '/introduce'});
 }]);
 
 labApp.config(function($translateProvider){
@@ -87,7 +94,7 @@ $httpProvider.interceptors.push(function($q,$rootScope,$location){
             var url    = config.url;
 
             if(status ==401){
-                $location.path("/listProduct");
+                $location.path("/introduce");
             }else{
                 $rootScope.error = method + " on " + url + " failed with status "+status;
 
@@ -122,7 +129,7 @@ $httpProvider.interceptors.push(function($q,$rootScope,$location){
 
 
     var originalPath = $location.path();
-    $location.path("/listProduct");
+    $location.path("/introduce");
     var authToken = $cookieStore.get('authToken');
     if (authToken != undefined) {
         $rootScope.authToken = authToken;

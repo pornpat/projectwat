@@ -1,5 +1,16 @@
 /* app css stylesheet */
 
+body {
+    background: url(images/background.jpg) no-repeat ;
+    background-attachment: fixed;
+
+}
+
+.boxContent {
+    width: 900px;
+    height: auto;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

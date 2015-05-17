@@ -32,6 +32,22 @@ qandaMainController.controller('listQandaController', ['$scope', '$http', '$root
             $scope.qandas = data;
         });
 
+        $scope.qanda = {};
+        $scope.addPerson = true;
+        $scope.editPerson = false;
+        $scope.addQanda = function () {
+
+            qandaService.save($scope.qanda,function(data){
+                // after adding the object, add a new picture
+                // get the product id which the image will be addded
+                var qanda = data.id;
+                // set location
+
+                $rootScope.addSuccess = true
+                $scope.$apply();
+                $route.reload();
+            });
+        };
 
         $scope.$on('$locationChangeStart', function (event) {
             $rootScope.addSuccess = false;

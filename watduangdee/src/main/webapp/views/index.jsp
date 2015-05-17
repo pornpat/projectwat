@@ -41,12 +41,11 @@
 
 </head>
 <body>
-
-
-<div class="" ng-controller="languageController">
+<br>
+<div class="boxContent" ng-controller="languageController">
     <div class="container-fluid">
             <div class="collapse navbar-collapse">
-                <div class="col-sm-12 col-md-offset-5 ng-scope" ng-controller="loginController" >
+                <div class="col-sm-12 col-md-offset-9 ng-scope" ng-controller="loginController" >
                 <form class="form-inline" ng-hide="user">
                     <div class="form-group">
                         <label for="username" class="col-sm-5 control-label">User Name:</label>
@@ -57,8 +56,10 @@
                         <div class="col-sm-3"><input id="password" ng-model="password" type="password" class="form-control"/> </div>
                     </div>
 
+
+
                     <div class="form-group">
-                        <div class="col-sm-offset-9 col-sm-9">
+                        <div class="col-sm-offset-9 col-sm-7">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-model="rememberMe"> Remember me
@@ -66,13 +67,31 @@
                             </div>
                             </div>
                     </div>
+
+
                     <div class="form-group">
-                        <div class="col-sm-3 col-sm-offset-3">
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <br>
                             <input type="submit" value="Log In" class="btn btn-primary" ng-click="login()"/>
+
+                        </div>
+
+                        <div class="form-group">
                             <a href="#/register">Register</a>
                         </div>
+
+
+
                     </div>
-                    </form>
+
+
+
+
+
+
+
+
+                </form>
                     <form class="form-inline" ng-show="user">
                         <div class="H6 col-sm-5 col-sm-offset-3 text-right">
                             Hello   !!! {{user.name}}

@@ -9,7 +9,6 @@ productMainController.controller('addProductController', ['$scope', '$http', '$l
         $scope.editPerson = false;
         $scope.addProduct = function (flowFiles) {
 
-
             productService.save($scope.product,function(data){
                 // after adding the object, add a new picture
                 // get the product id which the image will be addded
@@ -25,7 +24,41 @@ productMainController.controller('addProductController', ['$scope', '$http', '$l
                 $scope.$apply();
             });
         };
+    }]);
 
+productMainController.controller('editProductController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','productService',
+    function ($scope, $http, $routeParams, $location, $rootScope,productService) {
+        $scope.addPerson = false;
+        $scope.editPerson = true;
+        var id = $routeParams.id;
+
+        $http.get("/product/" + id).success(function (data) {
+            $scope.product = data;
+        });
+
+        $scope.editProduct = function (flowFiles) {
+            $scope.product.images = null;
+            productService.update({id:$scope.product.id},$scope.product,function(data){
+                flowFiles.opts.target = '/activityImage/add';
+                flowFiles.opts.testChunks = false;
+                flowFiles.opts.query ={activityid:$scope.product.id};
+                flowFiles.upload();
+
+                $rootScope.editSuccess = true;
+                $location.path("listProduct");
+                $scope.$apply();
+            });
+        }
+
+        $scope.deleteImg = function (id,imgid) {
+            var answer = confirm("Do you want to delete the Image?");
+            if (answer) {
+                deleteImgService.delete({id:id,imgid:imgid},function(){
+                    $rootScope.deleteSuccess = true;
+                    $route.reload();
+                })
+            }
+        };
 
     }]);
 
@@ -60,22 +93,4 @@ productMainController.controller('listProductController', ['$scope', '$http', '$
             });
         }
 
-    }]);
-
-productMainController.controller('editProductController', ['$scope', '$http', '$routeParams', '$location', '$rootScope','productService',
-    function ($scope, $http, $routeParams, $location, $rootScope,productService) {
-        $scope.addPerson = false;
-        $scope.editPerson = true;
-        var id = $routeParams.id;
-        $http.get("/product/" + id).success(function (data) {
-            $scope.product = data;
-        });
-
-        $scope.editProduct = function () {
-            //$http.put("/product", $scope.product).then(function () {
-            productService.update({id:$scope.product.id},$scope.product,function(){
-                $rootScope.editSuccess = true;
-                $location.path("listProduct");
-            });
-        }
     }]);

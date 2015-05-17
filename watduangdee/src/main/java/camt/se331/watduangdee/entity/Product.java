@@ -17,7 +17,7 @@ public class Product implements Comparable{
     Long id;
     String name;
     String description;
-    Double totalPrice;
+    String date;
 
     @OneToMany(fetch= FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
@@ -35,27 +35,18 @@ public class Product implements Comparable{
 
     };
 
-    public Product(Long id,String name, String description, Double price,Image image) {
+    public Product(Long id,String name, String description, String date,Image image) {
         this.name = name;
         this.description = description;
-        this.totalPrice = price;
+        this.date = date;
         this.id = id;
         this.getImages().add(image);
     }
 
-    public Double getNetPrice(){
-        return getTotalPrice()*(1-VatEntity.getInstance().getVat());
-    }
-
-    public Double getTax(){
-        return 0.0;
-    }
-
-
-    public Product(Long id,String name, String description, Double price) {
+    public Product(Long id,String name, String description, String date) {
         this.name = name;
         this.description = description;
-        this.totalPrice = price;
+        this.date = date;
         this.id = id;
     }
 
@@ -75,12 +66,12 @@ public class Product implements Comparable{
         this.description = description;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
+    public String getDate() {
+        return date;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override
@@ -108,7 +99,7 @@ public class Product implements Comparable{
         if (getName() != null ? !getName().equals(product.getName()) : product.getName() != null) return false;
         if (getDescription() != null ? !getDescription().equals(product.getDescription()) : product.getDescription() != null)
             return false;
-        if (getTotalPrice() != null ? !getTotalPrice().equals(product.getTotalPrice()) : product.getTotalPrice() != null)
+        if (getDate() != null ? !getDate().equals(product.getDate()) : product.getDate() != null)
             return false;
         return !(getImages() != null ? !getImages().equals(product.getImages()) : product.getImages() != null);
 
@@ -119,7 +110,7 @@ public class Product implements Comparable{
         int result = getId() != null ? getId().hashCode() : 0;
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
         result = 31 * result + (getDescription() != null ? getDescription().hashCode() : 0);
-        result = 31 * result + (getTotalPrice() != null ? getTotalPrice().hashCode() : 0);
+        result = 31 * result + (getDate() != null ? getDate().hashCode() : 0);
         result = 31 * result + (getImages() != null ? getImages().hashCode() : 0);
         return result;
     }

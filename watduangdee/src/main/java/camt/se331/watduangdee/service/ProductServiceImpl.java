@@ -22,8 +22,6 @@ public class ProductServiceImpl implements ProductService {
         return productDao.getProducts();
     }
 
-
-
     @Override
     public Product getProduct(Long id) {
         return productDao.getProduct(id);
@@ -42,6 +40,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product updateProduct(Product product) {
+//        product.setImages(productDao.getProduct(product.getId()).getImages());
         return productDao.updateProduct(product);
     }
 

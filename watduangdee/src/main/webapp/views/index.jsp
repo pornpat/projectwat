@@ -85,7 +85,7 @@
                 </form>
                     <form class="form-inline" ng-show="user">
                         <div class="H6 col-sm-5 col-sm-offset-3 text-right">
-                            Hello   !!! {{user.name}}
+                            Welcome {{user.name}}
                         </div>
                         <div class="form-group">
                             <div class="col-sm-3">

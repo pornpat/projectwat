@@ -1,5 +1,6 @@
 package camt.se331.watduangdee.service;
 
+import camt.se331.watduangdee.dao.DbProductDao;
 import camt.se331.watduangdee.dao.ProductDao;
 import camt.se331.watduangdee.entity.Image;
 import camt.se331.watduangdee.entity.Product;
@@ -27,6 +28,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     UserRepository userRepository;
+
+    public void setProductDao(DbProductDao productDao){
+        this.productDao = productDao;
+    }
+
+    public Product getProduct(int id){
+        List<Product> allProduct = productDao.getProducts();
+        for(Product product : allProduct){
+            if(product.getId()==id){
+                return product;
+            }
+        }
+        return null;
+    }
 
     @Override
     public List<Product> getProducts() {

@@ -21,6 +21,28 @@ public class Qanda {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Qanda qanda = (Qanda) o;
+
+        if (answer != null ? !answer.equals(qanda.answer) : qanda.answer != null) return false;
+        if (id != null ? !id.equals(qanda.id) : qanda.id != null) return false;
+        if (question != null ? !question.equals(qanda.question) : qanda.question != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (question != null ? question.hashCode() : 0);
+        result = 31 * result + (answer != null ? answer.hashCode() : 0);
+        return result;
+    }
+
     public Qanda(Long id, String question, String answer) {
         this.id = id;
         this.question = question;

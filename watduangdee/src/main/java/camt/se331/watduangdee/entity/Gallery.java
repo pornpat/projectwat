@@ -44,4 +44,25 @@ public class Gallery {
     public void setImages(Set<Image> images) {
         this.images = images;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Gallery gallery = (Gallery) o;
+
+        if (id != null ? !id.equals(gallery.id) : gallery.id != null) return false;
+        if (images != null ? !images.equals(gallery.images) : gallery.images != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (images != null ? images.hashCode() : 0);
+        return result;
+    }
 }

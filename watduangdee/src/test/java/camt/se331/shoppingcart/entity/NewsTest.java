@@ -1,9 +1,16 @@
 package camt.se331.shoppingcart.entity;
 
 import camt.se331.watduangdee.entity.Product;
+import camt.se331.watduangdee.service.ProductService;
+import camt.se331.watduangdee.service.ProductServiceImpl;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mockito;
+
+import org.junit.Test;
+import static org.junit.Assert.assertThat;
+
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
 
 /**
@@ -11,9 +18,11 @@ import static org.mockito.Mockito.*;
  */
 public class NewsTest {
 
+    ProductService productService;
+
     @Before
     public void setUp(){
-
+        productService = mock(ProductServiceImpl.class);
     }
 
     @Test
@@ -23,6 +32,13 @@ public class NewsTest {
         when(product.getName()).thenReturn("some title");
         when(product.getDescription()).thenReturn("some description");
         when(product.getDate()).thenReturn("20-05-2558");
+    }
+
+    @Test
+    public void testAddNewsUsingMock(){
+        productService.addProduct(new Product(1l,"some title", "some description", "20/05/2558"));
+        when(productService.addProduct(new Product(1l,"some title", "some description", "20/05/2558"))).thenReturn(new Product(1l,"some title", "some description", "20/05/2558"));
+        assertThat(productService.addProduct(new Product(1l,"some title", "some description", "20/05/2558")), is(new Product(1l,"some title", "some description", "20/05/2558")));
     }
 
     @Test

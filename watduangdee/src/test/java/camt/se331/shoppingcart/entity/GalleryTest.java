@@ -2,6 +2,7 @@ package camt.se331.shoppingcart.entity;
 
 import camt.se331.watduangdee.entity.Gallery;
 import camt.se331.watduangdee.entity.Image;
+import camt.se331.watduangdee.service.GalleryService;
 import org.junit.Test;
 
 import java.util.HashSet;
